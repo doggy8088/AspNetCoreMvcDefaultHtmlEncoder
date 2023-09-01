@@ -1,8 +1,12 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    var jsEncoder = System.Text.Encodings.Web.JavaScriptEncoder.Default;
 }
+
+<script>
+    var str = '@Html.Raw(jsEncoder.Encode(ViewBag.Message))';
+</script>
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p>@ViewBag.Message</p>
 </div>

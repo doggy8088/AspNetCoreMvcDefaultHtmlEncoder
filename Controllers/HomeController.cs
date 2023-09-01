@@ -15,6 +15,8 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        ViewBag.Message = "如何用 'ASP.NET Core' 打造 Web 應用程式";
+
         return View();
     }
 
